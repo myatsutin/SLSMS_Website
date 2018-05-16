@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/admin.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/blue_theme.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/HPOS.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/style1.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/rightcontext.css"><!--End Style Sheet Include -->
+    <!-- Bootstrap core CSS     -->
+    <!-- Animation library for notifications   -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+            <nav class="navbar navbar-default navbar-fixed">
+
+                <div class="sidebar-wrapper">
+
+                    <div class="logo">
+                        <a href="#" class="simple-text">
+                            Shipping Site
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+                        <li>
+						<li class="active">
+                            <a href="/employees">
+                                <p>Employee List</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobs">
+                                <i class="pe-7s-note2"></i>
+                                <p>Job List</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="pe-7s-note2"></i>
+                                <p>Client List</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="pe-7s-graph"></i>
+                                <p>VDR Analysis</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+         <div class="main-panel">
+            
+           <div class="container">
+            <h5><a href="/employees">Employee List</a></h5>
+               
+              
+			<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td>
+				  
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="2">
+					<tr>
+					  <td width="84%" class="secondarytableheader">Personal Details</td>
+					  <td width="16%" class="secondarytableheader">&nbsp;</td>
+					</tr>
+				  </table>          
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+					<tr>
+					  <td height="18" bgcolor="#CCCCCC">
+					    <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>First Name:</td>
+							<td><%= employee.firstname %></td>
+							<td width="15%" nowrap>Last Name:  </td>
+							<td><%= employee.lastname %></td>
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>DOB:</td>
+							<td>
+								<%= employee.dateofbirth %>"
+								
+							</td>							
+							<td width="15%" nowrap>Passport No:</td>
+							<td><%= employee.passportno %></td>
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Country: </td>
+							<td>
+							  <%= employee.country %>
+							</td>
+							<td width="15%" nowrap>Nationality:</td>
+							<td><%= employee.nationality %>					</
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Marrital Status:</td>
+							<td>
+								<%= employee.maritalStatus %>
+							</td>	
+                            <td></td>							
+						  </tr>	
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Comment:<span class="style2">*</span>  </td>
+							<td width="85%" colspan="3"><%= employee.comment %></td>							
+						  </tr>
+						</table>
+					  </td>
+					</tr>
+				  </table>
+				</td>
+			  </tr>
+			</table>
+			
+			<br/>
+			
+			<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td>
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="2">
+					<tr>
+					  <td width="84%" class="secondarytableheader">Family Details</td>
+					  <td width="16%" class="secondarytableheader">&nbsp;</td>
+					</tr>
+				  </table>
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+					<tr>
+					  <td height="18" bgcolor="#CCCCCC">
+					    <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Father Name:  </td>
+							<td><%= employee.fathername %></td>
+							<td>Mother Name:  </td>
+							<td><%= employee.mothername %></td>
+						  </tr>
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+						    <td width="15%" nowrap>Wife Name:  </td>
+							<td><%= employee.wifename %></td>
+							<td>No. of kids:  </td>
+							<td><%= employee.noofkids %></td>
+						  </tr>						  
+						</table>
+					  </td>
+					</tr>
+				  </table>
+				</td>
+			  </tr>
+			</table>
+			
+			<br/>
+			
+			<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+			  <td>
+				<table width="100%"  border="0" cellspacing="0" cellpadding="2">
+				  <tr>
+					<td width="84%" class="secondarytableheader">Bank Details</td>
+					<td width="16%" class="secondarytableheader">&nbsp;</td>
+				  </tr>
+				</table>
+				<table width="100%"  border="0" cellspacing="0" cellpadding="1">
+					<tr>
+					  <td height="18" bgcolor="#CCCCCC">
+					    <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Bank Name:<span class="style2">*</span></td>
+							<td>
+							 <%= employee.bankname %>
+							</td>
+							<td width="15%" nowrap>Account No.:<span class="style2">*</span></td>
+							<td><%= employee.accountno %></td>							
+						  </tr>
+						</table>
+					  </td>
+					</tr>
+				  </table>
+				</td>
+			  </tr>
+			</table>      
+			<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+			  <tr>				       
+	     		<td>
+				  <div class="buttonSet buttonsAreRightAligned" style="padding-left:4px; padding-top:9px;">
+					<div class="bWrapperUp bEmphasized">
+					  <div>
+					    <h3><a href="/employees/edit/<%= employee._id%>">EDIT</a></h3>
+                            <form action="/employees/delete/<%= employee._id%>" method="post">
+                            <button type="submit">DELETE</button>
+                            </form>
+					  </div>
+					</div>
+					<div class="clearFloats"></div>
+                  </div>                  
+				</td>
+			  </tr>
+			</table>		
+      
+    </div>
+  </body>
+</html>

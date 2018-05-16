@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+	
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple" data-image/image/sidebar-5.jpg>
+		      <div class="sidebar-wrapper">
+		
+
+                    <div class="logo">
+                        <a href="http://www.safe-lanes.com" class="simple-text">
+                            Safe Lanes
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+					    <li>
+                           <a href="/user">
+                              <p>User Profile</p>
+                           </a>
+                        </li>
+						
+						<li class="active">
+                            <a href="/employees">
+                               <p>Employee Master</p>
+                            </a>
+                        </li>
+						
+                        <li>
+                            <a href="/vdranalysis">
+                                <p>VDR Analysis</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignments">
+                               <p>Job Assignment</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+     <div class="main-panel">
+           
+			
+			<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h5><a href="/employees/create">Create Employee</a></h5>
+                                 <h5>Employee List</h5>
+                                
+                            </div>
+                            <div class="content table-responsive table-full-width">
+							 <% if(employees.length>0) { %>
+                                <table class="table table-hover table-striped">
+                                    <thead>
+									<tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Passport Number</th>
+                                    <th>Country</th>
+                                    <th>Bank Name</th>
+                                    <th>Account Number</th>
+									</tr>
+                                </thead>
+                               <tbody>
+			
+			                    <% for(var i=0; i<employees.length;i++) { %>
+                                   <tr>
+                                     <td><a href="/employees/show/<%= employees[i]._id%>"><%= employees[i].firstname%></a></td>
+                                    <td><%= employees[i].lastname%></td>
+								    <td><%= employees[i].dateofbirth%></td>
+								    <td><%= employees[i].passportno%></td>
+								    <td><%= employees[i].country%></td>
+								    <td><%= employees[i].bankname%></td>
+								    <td><%= employees[i].accountno%></td>
+                                  </tr>
+                                <% } %>
+							   </tbody>
+                          </table>
+                             <% } else { %>
+                         <div>No employees found.</div>
+                               <% } %>
+                         </div>
+			
+			
+			
+                         </div>
+                        </div>
+                    </div>
+
+
+                   
+
+
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--   Core JS Files   -->
+<script src="/javascripts/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!--  Charts Plugin -->
+<script src="/javascripts/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="/javascripts/bootstrap-notify.js"></script>
+<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

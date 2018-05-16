@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/admin.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/blue_theme.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/HPOS.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/style1.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/rightcontext.css"><!--End Style Sheet Include -->
+    <!-- Bootstrap core CSS     -->
+    <!-- Animation library for notifications   -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="/stylesheets/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+            <nav class="navbar navbar-default navbar-fixed">
+
+                <div class="sidebar-wrapper">
+
+                    <div class="logo">
+                        <a href="#" class="simple-text">
+                            Shipping Site
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/dashboard">
+                               <p>Dashboard</p>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/vdranalysis">
+                                <p>VDR Analysis</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jobassignment">
+                               <p>Job Assignment</p>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+		<div class="main-panel">
+    <div class="container">
+      <h3><a href="/jobassignments">Job Assignment List</a></h3>
+      <h1>Edit Job Assignment</h1>
+      <form action="/jobassignments/update/<%= jobassignment._id%>" method="post">
+        <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td>
+				  
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="2">
+					<tr>
+					  <td width="84%" class="secondarytableheader">Personal Details</td>
+					  <td width="16%" class="secondarytableheader">&nbsp;</td>
+					</tr>
+				  </table>          
+				  <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+					<tr>
+					  <td height="18" bgcolor="#CCCCCC">
+					    <table width="100%"  border="0" cellspacing="0" cellpadding="1">
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Auditor:<span class="style2">*</span>  </td>
+							<td width="35%" >
+							  <select size="1" style="width:150px;" name="employees" required>
+								<option selected><%= jobassignment.employeename %></option>
+								<option>Marinah</option>
+							  </select>
+							</td>
+							<td width="15%" nowrap>Job Type:<span class="style2">*</span>  </td>
+							<td width="35%">
+							  <select size="1" style="width:150px;" name="jobs" required>
+								<option selected><%= jobassignment.jobtype %></option>
+								<option>Live Navigation Audit</option>
+								</select>
+							</td>							
+						  </tr>
+						   <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Vessel:<span class="style2">*</span>  </td>
+							<td width="35%" >
+							  <select size="1" style="width:150px;" name="vessels" required>
+								<option selected><%= jobassignment.vessel %></option>
+								<option>Unique Infinity</option>
+							  </select>
+							</td>
+							<td width="15%" nowrap>Company:<span class="style2">*</span>  </td>
+							<td width="35%">
+							  <select size="1" style="width:150px;" name="companys" required>
+								<option selected><%= jobassignment.company %></option>
+								<option>AESM</option>
+								</select>
+							</td>							
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Assigned Date:<span class="style2">*</span>  </td>
+							<td width="35%">
+								<input type="date"  style="width:150px;" name="assigneddate" required value="<%= jobassignment.assigneddate %>">
+								<a href="#"><img src="images/calendar.gif" alt="Pick Date" width="16" height="16" border="0"></a>
+							</td>							
+							<td width="15%" nowrap>Travel Date:<span class="style2">*</span>  </td>
+							<td width="35%">
+								<input type="date"  style="width:150px;" name="traveldate" required value="<%= jobassignment.traveldate %>">
+								<a href="#"><img src="images/calendar.gif" alt="Pick Date" width="16" height="16" border="0"></a>
+							</td>	
+						  </tr>
+						  <tr bgcolor="#FFFFFF">
+							<td width="15%" nowrap>Destination from:<span class="style2">*</span>  </td>
+							<td width="35%" >
+							  <select size="1" style="width:150px;" name="countrys" required>
+								<option selected>"<%= jobassignment.destfrom %>"</option>
+								<option>Singapore</option>
+							  </select>
+							</td>
+							<td width="15%" nowrap>Destination To:<span class="style2">*</span>  </td>
+							<td width="35%">
+							  <select size="1" style="width:150px;" name="countrys" required>
+								<option selected>"<%= jobassignment.destto %>"</option>
+								<option>Merak</option>
+								</select>
+							</td>	
+                         </tr>		
+				  </table>
+				</td>
+			  </tr>
+			</table>
+			
+			
+			
+					  <tr>
+					   
+                      <td colspan="2"><button type="submit">Update</button></td>
+            	  </tr>
+					</tr>
+				  </table>
+				</td>
+			  </tr>
+			</table> 
+		
+          
+      </form>
+    </div>
+  </body>
+</html>
